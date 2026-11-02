@@ -7,7 +7,7 @@ function enterWorld() {
 
 // Mengatur menu
 function openMenu(menu) {
-  const pages = ["memory", "game", "letter"];
+  const pages = ["memory", "game", "letter", "surprise"];
 
   if (pages.includes(menu)) {
     document.getElementById("home").style.display = "none";
@@ -21,17 +21,12 @@ function openMenu(menu) {
     return;
   }
 
-  const messages = {
-    home: "Welcome to Ceishaa's Little Home! 🏡",
-    surprise: "Something special is coming! 🎂"
-  };
-
-  alert(messages[menu]);
+  alert("Welcome to Ceishaa's Little Home! 🏡");
 }
 
 // Kembali ke halaman utama
 function backHome() {
-  ["memory", "game", "letter"].forEach(function(page) {
+  ["memory", "game", "letter", "surprise"].forEach(function(page) {
     document.getElementById(page).style.display = "none";
   });
 
@@ -48,4 +43,10 @@ function openGift(number) {
   ];
 
   document.getElementById("gift-result").textContent = gifts[number];
+}
+
+// Birthday Surprise
+function showSurprise() {
+  document.getElementById("surprise-result").textContent =
+    "🎉 SURPRISE! Happy Birthday, Ceishaa! 🎉 May all your little wishes come true! 💗";
 }
