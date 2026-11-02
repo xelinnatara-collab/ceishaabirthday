@@ -379,3 +379,67 @@ button:active {
   border-radius: 25px;
   cursor: pointer;
 }
+
+/* BIRTHDAY SURPRISE */
+.surprise-page {
+  display: none;
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+  background: #fff0f6;
+  color: #a64d79;
+}
+
+.surprise-ribbon {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.surprise-page h1 {
+  font-family: Georgia, serif;
+  font-size: 29px;
+}
+
+.surprise-subtitle {
+  color: #c4779c;
+}
+
+.birthday-cake {
+  font-size: 95px;
+  margin: 30px 0;
+  animation: cakeBounce 2s infinite ease-in-out;
+}
+
+.surprise-page h2 {
+  font-family: Georgia, serif;
+}
+
+.birthday-message {
+  max-width: 350px;
+  margin: 20px auto 30px;
+  line-height: 1.8;
+  color: #bd7195;
+}
+
+.surprise-page button {
+  display: block;
+  margin: 15px auto;
+  background: #e99abb;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+#surprise-result {
+  min-height: 45px;
+  margin: 20px 0;
+  color: #bd7195;
+  font-weight: bold;
+}
+
+@keyframes cakeBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
