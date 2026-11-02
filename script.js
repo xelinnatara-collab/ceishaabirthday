@@ -7,10 +7,15 @@ function enterWorld() {
 
 // Mengatur menu
 function openMenu(menu) {
-  if (menu === "memory" || menu === "game") {
+  const pages = ["memory", "game", "letter"];
+
+  if (pages.includes(menu)) {
     document.getElementById("home").style.display = "none";
-    document.getElementById("memory").style.display = "none";
-    document.getElementById("game").style.display = "none";
+
+    pages.forEach(function(page) {
+      document.getElementById(page).style.display = "none";
+    });
+
     document.getElementById(menu).style.display = "block";
     window.scrollTo({ top: 0, behavior: "smooth" });
     return;
@@ -18,7 +23,6 @@ function openMenu(menu) {
 
   const messages = {
     home: "Welcome to Ceishaa's Little Home! 🏡",
-    letter: "A little secret is waiting here! 💌",
     surprise: "Something special is coming! 🎂"
   };
 
@@ -27,8 +31,10 @@ function openMenu(menu) {
 
 // Kembali ke halaman utama
 function backHome() {
-  document.getElementById("memory").style.display = "none";
-  document.getElementById("game").style.display = "none";
+  ["memory", "game", "letter"].forEach(function(page) {
+    document.getElementById(page).style.display = "none";
+  });
+
   document.getElementById("home").style.display = "block";
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
