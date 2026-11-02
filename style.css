@@ -255,3 +255,61 @@ button:active {
     height: 135px;
   }
   }
+/* PLAY TIME */
+.game-page {
+  display: none;
+  min-height: 100vh;
+  padding: 40px 18px;
+  text-align: center;
+  background: #fff0f6;
+  color: #a64d79;
+}
+
+.game-page h1 {
+  font-family: Georgia, serif;
+  font-size: 28px;
+}
+
+.game-page p {
+  color: #c4779c;
+}
+
+.gift-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 45px auto 30px;
+}
+
+.gift-box {
+  width: 85px;
+  height: 85px;
+  border: 2px solid #f3c1d5;
+  border-radius: 20px;
+  background: white;
+  font-size: 38px;
+  cursor: pointer;
+  box-shadow: 0 5px 12px #e8b6ca;
+  transition: transform 0.2s;
+}
+
+.gift-box:hover {
+  transform: translateY(-6px) rotate(-5deg);
+}
+
+#gift-result {
+  min-height: 55px;
+  margin: 25px 0;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+.game-page > button:last-child {
+  background: #e99abb;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 25px;
+  cursor: pointer;
+  }
