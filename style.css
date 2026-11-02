@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Pacifico&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #fff0f5, #fbd5e5, #ffeaf2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.welcome {
+  width: 100%;
+  max-width: 430px;
+  min-height: 570px;
+  padding: 45px 25px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 2px solid white;
+  border-radius: 35px;
+  box-shadow: 0 15px 45px rgba(219, 130, 165, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ribbon {
+  font-size: 55px;
+  margin-bottom: 20px;
+}
+
+.small-title {
+  color: #d78ba9;
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 34px;
+  line-height: 1.5;
+  color: #d982a5;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  color: #a77b8c;
+  font-size: 13px;
+  line-height: 1.8;
+  max-width: 270px;
+}
+
+.bunny {
+  font-size: 75px;
+  margin: 25px 0;
+  animation: float 2s ease-in-out infinite;
+}
+
+button {
+  border: none;
+  background: #e9a8c1;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 30px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 5px 15px rgba(219, 130, 165, 0.25);
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: 30px;
+  color: #c28da2;
+  font-size: 10px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
