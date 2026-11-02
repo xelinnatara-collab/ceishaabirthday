@@ -1,17 +1,23 @@
+// Membuka halaman utama
 function enterWorld() {
-  const title = document.querySelector("h1");
-  const subtitle = document.querySelector(".subtitle");
-  const button = document.querySelector("button");
-  const bunny = document.querySelector(".bunny");
+  document.getElementById("welcome").style.display = "none";
+  document.getElementById("home").style.display = "block";
 
-  title.innerHTML = "Yayyy! You're Here! 💗";
-  subtitle.innerHTML =
-    "Welcome to your special little world, Ceishaa!";
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
 
-  bunny.innerHTML = "🐰🎀";
-  button.innerHTML = "Let's Explore! ✨";
-
-  button.onclick = function() {
-    alert("Your little adventure is coming soon! 💗");
+// Fungsi sementara untuk menu
+function openMenu(menu) {
+  const messages = {
+    home: "Welcome to Ceishaa's Little Home! 🏡",
+    memory: "Memory Corner is coming soon! 📸",
+    game: "Let's play together soon! 🎮",
+    letter: "A little secret is waiting here! 💌",
+    surprise: "Something special is coming! 🎂"
   };
+
+  alert(messages[menu]);
 }
