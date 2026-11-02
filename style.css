@@ -10,17 +10,17 @@ body {
   min-height: 100vh;
   font-family: 'Quicksand', sans-serif;
   background: linear-gradient(135deg, #fff0f5, #fbd5e5, #ffeaf2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: #a77b8c;
   padding: 20px;
-  overflow-x: hidden;
 }
+
+/* OPENING PAGE */
 
 .welcome {
   width: 100%;
   max-width: 430px;
   min-height: 570px;
+  margin: 30px auto;
   padding: 45px 25px;
   background: rgba(255, 255, 255, 0.72);
   border: 2px solid white;
@@ -55,7 +55,6 @@ h1 {
 }
 
 .subtitle {
-  color: #a77b8c;
   font-size: 13px;
   line-height: 1.8;
   max-width: 270px;
@@ -76,8 +75,12 @@ button {
   font-family: 'Quicksand', sans-serif;
   font-size: 13px;
   font-weight: 700;
-  box-shadow: 0 5px 15px rgba(219, 130, 165, 0.25);
   cursor: pointer;
+  transition: 0.3s;
+}
+
+button:active {
+  transform: scale(0.95);
 }
 
 .footer {
@@ -86,7 +89,98 @@ button {
   font-size: 10px;
 }
 
+/* HOME PAGE */
+
+.home {
+  width: 100%;
+  max-width: 430px;
+  margin: 15px auto;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 2px solid white;
+  border-radius: 35px;
+  box-shadow: 0 15px 45px rgba(219, 130, 165, 0.2);
+  text-align: center;
+}
+
+.home-header {
+  padding: 15px 0;
+}
+
+.home-header p:first-child {
+  color: #d78ba9;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.home-header h1 {
+  margin: 12px 0;
+}
+
+.home-header p:last-child {
+  font-size: 12px;
+}
+
+.home-bunny {
+  font-size: 65px;
+  margin: 15px;
+  animation: float 2s ease-in-out infinite;
+}
+
+.home h2 {
+  color: #d982a5;
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+.menu-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+
+.menu-card {
+  min-height: 115px;
+  background: #fff0f5;
+  color: #d982a5;
+  border: 2px solid white;
+  border-radius: 22px;
+  box-shadow: 0 5px 15px rgba(219, 130, 165, 0.12);
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-card span {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.menu-card:hover {
+  background: #fbd5e5;
+  transform: translateY(-4px);
+}
+
+.menu-card:last-child {
+  grid-column: span 2;
+}
+
+.home-footer {
+  margin-top: 30px;
+  color: #c28da2;
+  font-size: 11px;
+}
+
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
 }
