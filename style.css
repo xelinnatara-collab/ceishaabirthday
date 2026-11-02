@@ -184,3 +184,74 @@ button:active {
     transform: translateY(-12px);
   }
 }
+/* MEMORY CORNER */
+.memory-page {
+  display: none;
+  min-height: 100vh;
+  padding: 35px 18px;
+  text-align: center;
+  background: #fff0f6;
+  color: #a64d79;
+}
+
+.memory-page h1 {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.memory-subtitle {
+  margin-bottom: 25px;
+  color: #c4779c;
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  max-width: 600px;
+  margin: 0 auto 28px;
+}
+
+.photo-card {
+  background: white;
+  padding: 9px 9px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px #e8b6ca;
+  transform: rotate(-2deg);
+}
+
+.photo-card:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.photo-card p {
+  font-size: 12px;
+  margin: 10px 0 0;
+}
+
+.memory-page button {
+  background: #e99abb;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+@media (max-width: 400px) {
+  .photo-gallery {
+    gap: 12px;
+  }
+
+  .photo-card img {
+    height: 135px;
+  }
+  }
