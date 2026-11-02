@@ -313,3 +313,69 @@ button:active {
   border-radius: 25px;
   cursor: pointer;
   }
+/* SECRET LETTER */
+.letter-page {
+  display: none;
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+  background: #fff0f6;
+  color: #a64d79;
+}
+
+.letter-decoration {
+  font-size: 55px;
+  margin-bottom: 15px;
+}
+
+.letter-page h1 {
+  font-family: Georgia, serif;
+  font-size: 28px;
+}
+
+.letter-subtitle {
+  color: #c4779c;
+  margin-bottom: 30px;
+}
+
+.letter-paper {
+  max-width: 420px;
+  margin: 0 auto 28px;
+  padding: 28px 22px;
+  background: #fffafc;
+  border: 2px dashed #edb3cb;
+  border-radius: 18px;
+  box-shadow: 0 5px 15px #e8b6ca;
+  text-align: left;
+}
+
+.letter-icon {
+  text-align: center;
+  font-size: 28px;
+}
+
+.letter-paper h2 {
+  font-family: Georgia, serif;
+  color: #bd7195;
+}
+
+.letter-placeholder {
+  min-height: 70px;
+  color: #c4779c;
+  line-height: 1.8;
+}
+
+.letter-sign {
+  text-align: right;
+  color: #bd7195;
+  margin-top: 25px;
+}
+
+.letter-page > button {
+  background: #e99abb;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 25px;
+  cursor: pointer;
+}
