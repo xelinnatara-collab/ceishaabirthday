@@ -8,7 +8,9 @@
 </head>
 <body>
 
-  <main class="welcome">
+  <!-- OPENING PAGE -->
+  <main class="welcome" id="welcome">
+
     <div class="ribbon">🎀</div>
 
     <p class="small-title">A LITTLE WORLD MADE FOR YOU</p>
@@ -26,8 +28,54 @@
     </button>
 
     <p class="footer">Made with love, just for Ceishaa 💗</p>
+
   </main>
 
+
+  <!-- HOME PAGE -->
+  <section class="home" id="home" style="display: none;">
+
+    <div class="home-header">
+      <p>WELCOME, PRETTY GIRL! 🎀</p>
+      <h1>Hi, Ceishaa! 💗</h1>
+      <p>Your little world is waiting for you.</p>
+    </div>
+
+    <div class="home-bunny">🐰</div>
+
+    <h2>Choose Your Little Adventure ♡</h2>
+
+    <div class="menu-container">
+
+      <button class="menu-card" onclick="openMenu('home')">
+        🏡<span>My Little Home</span>
+      </button>
+
+      <button class="menu-card" onclick="openMenu('memory')">
+        📸<span>Memory Corner</span>
+      </button>
+
+      <button class="menu-card" onclick="openMenu('game')">
+        🎮<span>Play Time</span>
+      </button>
+
+      <button class="menu-card" onclick="openMenu('letter')">
+        💌<span>Secret Letter</span>
+      </button>
+
+      <button class="menu-card" onclick="openMenu('surprise')">
+        🎂<span>Birthday Surprise</span>
+      </button>
+
+    </div>
+
+    <p class="home-footer">
+      Made with lots of love ♡
+    </p>
+
+  </section>
+
   <script src="script.js"></script>
+
 </body>
 </html>
