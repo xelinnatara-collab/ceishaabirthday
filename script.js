@@ -77,10 +77,10 @@ async function startLetterTyping() {
 
       element.textContent += character;
 
-      await wait(55);
+      await wait(45);
     }
 
-    await wait(700);
+    await wait(650);
   }
 
   if (session === typingSession) {
