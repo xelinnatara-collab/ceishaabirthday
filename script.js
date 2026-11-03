@@ -1,4 +1,3 @@
-
 function enterWorld() {
   document.getElementById("welcome").style.display = "none";
   document.getElementById("home").style.display = "block";
