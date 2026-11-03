@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,33 +9,19 @@
 </head>
 <body>
 
-  <!-- OPENING PAGE -->
+  <!-- WELCOME -->
   <main class="welcome" id="welcome">
-
     <div class="ribbon">🎀</div>
-
     <p class="small-title">A LITTLE WORLD MADE FOR YOU</p>
-
     <h1>Welcome to<br>Ceishaa's World!</h1>
-
-    <p class="subtitle">
-      A tiny place filled with love, smiles, and little surprises.
-    </p>
-
+    <p class="subtitle">A tiny place filled with love, smiles, and little surprises.</p>
     <div class="bunny">🐰</div>
-
-    <button onclick="enterWorld()">
-      Open My Little World ♡
-    </button>
-
+    <button onclick="enterWorld()">Open My Little World ♡</button>
     <p class="footer">Made with love, just for Ceishaa 💗</p>
-
   </main>
 
-
-  <!-- HOME PAGE -->
-  <section class="home" id="home" style="display: none;">
-
+  <!-- HOME -->
+  <section class="home page" id="home">
     <div class="home-header">
       <p>WELCOME, PRETTY GIRL! 🎀</p>
       <h1>Hi, Ceishaa! 💗</h1>
@@ -42,144 +29,112 @@
     </div>
 
     <div class="home-bunny">🐰</div>
-
     <h2>Choose Your Little Adventure ♡</h2>
 
     <div class="menu-container">
-
-      <button class="menu-card" onclick="openMenu('home')">
-        🏡<span>My Little Home</span>
-      </button>
-
-      <button class="menu-card" onclick="openMenu('memory')">
-        📸<span>Memory Corner</span>
-      </button>
-
-      <button class="menu-card" onclick="openMenu('game')">
-        🎮<span>Play Time</span>
-      </button>
-
-      <button class="menu-card" onclick="openMenu('letter')">
-        💌<span>Secret Letter</span>
-      </button>
-
-      <button class="menu-card" onclick="openMenu('surprise')">
-        🎂<span>Birthday Surprise</span>
-      </button>
-
+      <button class="menu-card" onclick="openMenu('home')">🏡<span>My Little Home</span></button>
+      <button class="menu-card" onclick="openMenu('memory')">📸<span>Memory Corner</span></button>
+      <button class="menu-card" onclick="openMenu('game')">🎮<span>Play Time</span></button>
+      <button class="menu-card" onclick="openMenu('letter')">💌<span>Secret Letter</span></button>
+      <button class="menu-card" onclick="openMenu('surprise')">🎂<span>Birthday Surprise</span></button>
     </div>
 
-    <p class="home-footer">
-      Made with lots of love ♡
-    </p>
-
+    <p class="home-footer">Made with lots of love ♡</p>
   </section>
 
   <!-- MEMORY CORNER -->
-<section class="memory-page" id="memory" style="display: none;">
+  <section class="memory-page page" id="memory">
+    <h1>Memory Corner ♡</h1>
+    <p class="section-subtitle">Little moments of a lovely girl 🎀</p>
 
-  <h1>Memory Corner ♡</h1>
-
-  <p class="memory-subtitle">
-    Little moments of a lovely girl 🎀
-  </p>
-
-  <div class="photo-gallery">
-
-    <div class="photo-card">
-      <img src="20260419_181452.jpg" alt="Ceishaa 1">
-      <p>Pretty little moment ♡</p>
+    <div class="photo-gallery">
+      <div class="photo-card">
+        <img src="20260419_181452.jpg" alt="Ceishaa 1">
+        <p>Pretty little moment ♡</p>
+      </div>
+      <div class="photo-card">
+        <img src="Screenshot_20261102_222630_TikTok.jpg" alt="Ceishaa 2">
+        <p>Sweet memories 🌷</p>
+      </div>
+      <div class="photo-card">
+        <img src="Screenshot_20261102_222746_TikTok.jpg" alt="Ceishaa 3">
+        <p>Simply adorable 💗</p>
+      </div>
+      <div class="photo-card">
+        <img src="Screenshot_20261102_222831_TikTok.jpg" alt="Ceishaa 4">
+        <p>A little sunshine ☀️</p>
+      </div>
     </div>
 
-    <div class="photo-card">
-      <img src="Screenshot_20261102_222630_TikTok.jpg" alt="Ceishaa 2">
-      <p>Sweet memories 🌷</p>
-    </div>
-
-    <div class="photo-card">
-      <img src="Screenshot_20261102_222746_TikTok.jpg" alt="Ceishaa 3">
-      <p>Simply adorable 💗</p>
-    </div>
-
-    <div class="photo-card">
-      <img src="Screenshot_20261102_222831_TikTok.jpg" alt="Ceishaa 4">
-      <p>A little sunshine ☀️</p>
-    </div>
-
-    <div class="photo-card">
-      <img src="Screenshot_20261102_222519_TikTok.jpg" alt="Ceishaa 5">
-      <p>Forever lovely 🎀</p>
-    </div>
-
-  </div>
-
-  <button onclick="backHome()">Back to Home ♡</button>
-
-</section>
+    <button class="back-button" onclick="backHome()">Back to Home ♡</button>
+  </section>
 
   <!-- PLAY TIME -->
-<section class="game-page" id="game" style="display: none;">
-  <h1>Pick a Mystery Gift! 🎁</h1>
-  <p>Choose one little gift and see your surprise ♡</p>
+  <section class="game-page page" id="game">
+    <h1>Pick a Mystery Gift! 🎁</h1>
+    <p class="section-subtitle">Choose one little gift and discover your surprise!</p>
 
-  <div class="gift-container">
-    <button class="gift-box" onclick="openGift(0)">🎁</button>
-    <button class="gift-box" onclick="openGift(1)">🎀</button>
-    <button class="gift-box" onclick="openGift(2)">💝</button>
-  </div>
+    <div class="gift-container">
+      <button class="gift-box" onclick="openGift(0)">🎁</button>
+      <button class="gift-box" onclick="openGift(1)">🎀</button>
+      <button class="gift-box" onclick="openGift(2)">💝</button>
+    </div>
 
-  <p id="gift-result">Which gift will you choose? 💗</p>
+    <div class="gift-result" id="gift-result">
+      Which gift will you choose? 💗
+    </div>
 
-  <button onclick="backHome()">Back to Home ♡</button>
-</section>
+    <button class="back-button" onclick="backHome()">Back to Home ♡</button>
+  </section>
 
   <!-- SECRET LETTER -->
-<section class="letter-page" id="letter" style="display: none;">
-  <div class="letter-decoration">💌</div>
-  <h1>A Little Letter for You ♡</h1>
-  <p class="letter-subtitle">
-    A special message is waiting for you, Ceishaa 🎀
-  </p>
+  <section class="letter-page page" id="letter">
+    <div class="letter-decoration">💌</div>
+    <h1>A Little Letter for You ♡</h1>
+    <p class="section-subtitle">A special message is waiting for you, Ceishaa 🎀</p>
 
-  <div class="letter-paper">
-    <div class="letter-icon">🎀</div>
-    <h2>Dear Ceishaa,</h2>
-    <p class="letter-placeholder">
-      Your special letter will be here soon...
-    </p>
-    <p class="letter-sign">With love, ♡</p>
-  </div>
+    <div class="letter-paper">
+      <div class="letter-icon">🎀</div>
+      <h2>Dear Ceishaa,</h2>
 
-  <button onclick="backHome()">Back to Home ♡</button>
-</section>
+      <div class="letter-content" id="letter-content">
+        Your special letter will be here soon...
+      </div>
+
+      <p class="letter-sign">From your besti poreperr! ♡</p>
+    </div>
+
+    <button class="back-button" onclick="backHome()">Back to Home ♡</button>
+  </section>
 
   <!-- BIRTHDAY SURPRISE -->
-<section class="surprise-page" id="surprise" style="display: none;">
-  <div class="surprise-ribbon">🎀</div>
+  <section class="surprise-page page" id="surprise">
+    <div class="surprise-ribbon">🎀</div>
+    <h1>Happy Birthday, Ceishaa! 💗</h1>
+    <p class="section-subtitle">Today is all about you, pretty girl!</p>
 
-  <h1>Happy Birthday, Ceishaa! 💗</h1>
-  <p class="surprise-subtitle">
-    Today is all about you, pretty girl!
-  </p>
+    <div class="surprise-intro" id="surprise-intro">
+      <div class="waiting-gift">🎁</div>
+      <h2>Something Special Is Waiting...</h2>
+      <p>Are you ready for your birthday surprise?</p>
+      <button class="surprise-button" onclick="showSurprise()">Make a Wish! ✨</button>
+    </div>
 
-  <div class="birthday-cake">🎂</div>
+    <div class="birthday-reveal" id="birthday-reveal">
+      <div class="party-decor">🎈 🎉 🎈</div>
+      <div class="birthday-cake">🎂</div>
+      <h2>HAPPY BIRTHDAY!!</h2>
+      <p class="birthday-message">
+        May your days be filled with happiness,
+        laughter, and beautiful little surprises.
+        Keep shining, Ceishaa! 🌷
+      </p>
+      <div id="confetti-area"></div>
+    </div>
 
-  <h2>A Little Wish for You ♡</h2>
+    <button class="back-button" onclick="backHome()">Back to Home ♡</button>
+  </section>
 
-  <p class="birthday-message">
-    May your days be filled with happiness,
-    laughter, and beautiful little surprises.
-    Keep shining, Ceishaa! 🌷
-  </p>
-
-  <button onclick="showSurprise()">Click for a Surprise! 🎁</button>
-
-  <p id="surprise-result"></p>
-
-  <button onclick="backHome()">Back to Home ♡</button>
-</section>
-  
   <script src="script.js"></script>
-
 </body>
 </html>
