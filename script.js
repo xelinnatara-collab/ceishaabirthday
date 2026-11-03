@@ -1,32 +1,32 @@
-// Membuka halaman utama
+
 function enterWorld() {
   document.getElementById("welcome").style.display = "none";
   document.getElementById("home").style.display = "block";
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// Mengatur menu
 function openMenu(menu) {
-  const pages = ["memory", "game", "letter", "surprise"];
-
-  if (pages.includes(menu)) {
-    document.getElementById("home").style.display = "none";
-
-    pages.forEach(function(page) {
-      document.getElementById(page).style.display = "none";
-    });
-
-    document.getElementById(menu).style.display = "block";
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  if (menu === "home") {
+    backHome();
     return;
   }
 
-  alert("Welcome to Ceishaa's Little Home! 🏡");
+  const pages = ["memory", "game", "letter", "surprise"];
+
+  pages.forEach(function(page) {
+    document.getElementById(page).style.display = "none";
+  });
+
+  document.getElementById("home").style.display = "none";
+  document.getElementById(menu).style.display = "block";
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// Kembali ke halaman utama
 function backHome() {
-  ["memory", "game", "letter", "surprise"].forEach(function(page) {
+  const pages = ["memory", "game", "letter", "surprise"];
+
+  pages.forEach(function(page) {
     document.getElementById(page).style.display = "none";
   });
 
@@ -34,19 +34,48 @@ function backHome() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// Kejutan kotak hadiah
+// MYSTERY GIFT GAME
+
 function openGift(number) {
   const gifts = [
-    "🌷 You are a beautiful little sunshine!",
-    "💗 You deserve all the happiness in the world!",
-    "🎀 Never stop being your lovely self, Ceishaa!"
+    "🌷 A little reminder: you are someone's sunshine. Keep shining, Ceishaa!",
+    "💗 You deserve happiness, beautiful memories, and all the good things in life!",
+    "🎀 Your biggest gift is being YOU. Never stop being your lovely self!"
   ];
 
-  document.getElementById("gift-result").textContent = gifts[number];
+  const result = document.getElementById("gift-result");
+
+  result.classList.remove("revealed");
+
+  result.textContent = "✨ Opening your mystery gift...";
+
+  setTimeout(function() {
+    result.textContent = gifts[number];
+    result.classList.add("revealed");
+  }, 600);
 }
 
-// Birthday Surprise
+// BIRTHDAY SURPRISE
+
 function showSurprise() {
-  document.getElementById("surprise-result").textContent =
-    "🎉 SURPRISE! Happy Birthday, Ceishaa! 🎉 May all your little wishes come true! 💗";
+  document.getElementById("surprise-intro").style.display = "none";
+
+  const reveal = document.getElementById("birthday-reveal");
+  reveal.classList.add("show");
+
+  const area = document.getElementById("confetti-area");
+  const decorations = ["🎀", "💗", "✨", "🎉", "🌸"];
+
+  area.innerHTML = "";
+
+  for (let i = 0; i < 24; i++) {
+    const piece = document.createElement("span");
+
+    piece.className = "confetti";
+    piece.textContent = decorations[i % decorations.length];
+    piece.style.left = Math.random() * 95 + "%";
+    piece.style.animationDelay = Math.random() * 1.5 + "s";
+
+    area.appendChild(piece);
+  }
 }
