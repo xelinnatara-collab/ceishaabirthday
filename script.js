@@ -19,6 +19,10 @@ function openMenu(menu) {
   document.getElementById("home").style.display = "none";
   document.getElementById(menu).style.display = "block";
 
+  if (menu === "letter") {
+    startLetterTyping();
+  }
+
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
@@ -33,6 +37,58 @@ function backHome() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+// SECRET LETTER TYPEWRITER
+
+const letterContent = document.getElementById("letter-content");
+
+const originalLetter = Array.from(letterContent.children).map(function(item) {
+  return {
+    tag: item.tagName,
+    text: item.textContent
+  };
+});
+
+let typingSession = 0;
+
+function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function startLetterTyping() {
+  const session = ++typingSession;
+
+  const sign = document.querySelector(".letter-sign");
+
+  letterContent.innerHTML = "";
+  sign.classList.remove("show");
+
+  letterContent.classList.add("typing");
+
+  for (const item of originalLetter) {
+    if (session !== typingSession) return;
+
+    const element = document.createElement(item.tag);
+    letterContent.appendChild(element);
+
+    const characters = Array.from(item.text);
+
+    for (const character of characters) {
+      if (session !== typingSession) return;
+
+      element.textContent += character;
+
+      await wait(25);
+    }
+
+    await wait(350);
+  }
+
+  if (session === typingSession) {
+    letterContent.classList.remove("typing");
+    sign.classList.add("show");
+  }
+}
+
 // MYSTERY GIFT GAME
 
 function openGift(number) {
@@ -45,7 +101,6 @@ function openGift(number) {
   const result = document.getElementById("gift-result");
 
   result.classList.remove("revealed");
-
   result.textContent = "✨ Opening your mystery gift...";
 
   setTimeout(function() {
