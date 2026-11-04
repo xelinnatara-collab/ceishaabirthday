@@ -10,7 +10,7 @@ function openMenu(menu) {
     return;
   }
 
-  const pages = ["memory", "game", "letter", "surprise"];
+  const pages = ["memory", "game", "letter", "surprise", "ending"];
 
   pages.forEach(function(page) {
     document.getElementById(page).style.display = "none";
@@ -27,7 +27,7 @@ function openMenu(menu) {
 }
 
 function backHome() {
-  const pages = ["memory", "game", "letter", "surprise"];
+  const pages = ["memory", "game", "letter", "surprise", "ending"];
 
   pages.forEach(function(page) {
     document.getElementById(page).style.display = "none";
