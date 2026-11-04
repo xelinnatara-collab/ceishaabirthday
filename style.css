@@ -373,7 +373,7 @@ h1 {
   position: relative;
   width: 100%;
   max-width: 650px;
-  height: 1170px;
+  height: 1260px;
   margin: 25px auto 10px;
 }
 
@@ -595,6 +595,120 @@ h1 {
   color: #bd7195;
 }
 
+/* LAST BUTTON */
+
+.finale-button {
+  display: block;
+  margin: 25px auto 8px;
+  padding: 14px 26px;
+  border-radius: 30px;
+  background: #e99abb;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: 0 5px 12px #edc4d5;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.finale-button:active {
+  transform: scale(0.94);
+}
+
+.finale-hint {
+  margin: 8px auto 25px;
+  color: #bd83a0;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+}
+
+/* FINAL SCREEN */
+
+.finale-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #1b1018;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 3s ease, visibility 3s ease;
+}
+
+.finale-screen.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.finale-screen h1 {
+  margin: 0;
+  color: #f5b8d2;
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: clamp(65px, 16vw, 110px);
+  font-weight: normal;
+  letter-spacing: 2px;
+  text-shadow: 0 0 18px #e99abb, 0 0 35px #c66e98;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 2s ease, transform 2s ease;
+  z-index: 2;
+}
+
+.finale-screen.show-title h1 {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* FALLING FLOWERS */
+
+#falling-flowers {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.falling-flower {
+  position: absolute;
+  top: -45px;
+  animation: flowerFall linear forwards;
+  pointer-events: none;
+  user-select: none;
+}
+
+@keyframes flowerFall {
+  0% {
+    transform: translateY(-30px) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* LITTLE HINT */
+
+.button-hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  opacity: 0.85;
+}
+
 /* MOBILE */
 
 @media (max-width: 420px) {
@@ -630,7 +744,7 @@ h1 {
   }
 
   .chaos-gallery {
-    height: 1100px;
+    height: 1260px;
     margin-top: 20px;
   }
 
@@ -663,15 +777,4 @@ h1 {
   .ending-note {
     padding: 20px 15px;
   }
-}
-
-/* LITTLE HINT ON THE LAST BUTTON */
-
-.button-hint {
-  display: block;
-  margin-top: 6px;
-  font-size: 11px;
-  font-weight: normal;
-  letter-spacing: 0.5px;
-  opacity: 0.85;
 }
