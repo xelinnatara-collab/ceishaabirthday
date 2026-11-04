@@ -1,8 +1,13 @@
+// ENTER THE LITTLE WORLD
+
 function enterWorld() {
   document.getElementById("welcome").style.display = "none";
   document.getElementById("home").style.display = "block";
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
+
+// MENU NAVIGATION
 
 function openMenu(menu) {
   if (menu === "home") {
@@ -26,6 +31,9 @@ function openMenu(menu) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+
+// BACK TO HOME
+
 function backHome() {
   const pages = ["memory", "game", "letter", "surprise", "ending"];
 
@@ -36,6 +44,7 @@ function backHome() {
   document.getElementById("home").style.display = "block";
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
 
 // SECRET LETTER TYPEWRITER
 
@@ -56,12 +65,10 @@ function wait(ms) {
 
 async function startLetterTyping() {
   const session = ++typingSession;
-
   const sign = document.querySelector(".letter-sign");
 
   letterContent.innerHTML = "";
   sign.classList.remove("show");
-
   letterContent.classList.add("typing");
 
   for (const item of originalLetter) {
@@ -76,7 +83,6 @@ async function startLetterTyping() {
       if (session !== typingSession) return;
 
       element.textContent += character;
-
       await wait(60);
     }
 
@@ -88,6 +94,7 @@ async function startLetterTyping() {
     sign.classList.add("show");
   }
 }
+
 
 // MYSTERY GIFT GAME
 
@@ -108,6 +115,7 @@ function openGift(number) {
     result.classList.add("revealed");
   }, 600);
 }
+
 
 // BIRTHDAY SURPRISE
 
@@ -132,4 +140,60 @@ function showSurprise() {
 
     area.appendChild(piece);
   }
+}
+
+
+// THE FINAL SURPRISE
+
+let finaleStarted = false;
+
+async function startFinale() {
+  if (finaleStarted) return;
+
+  finaleStarted = true;
+
+  const screen = document.getElementById("finale-screen");
+  const flowerArea = document.getElementById("falling-flowers");
+  const button = document.querySelector(".finale-button");
+  const hint = document.querySelector(".finale-hint");
+
+  if (!screen || !flowerArea) return;
+
+  // Hide the button and its hint
+
+  if (button) {
+    button.style.display = "none";
+  }
+
+  if (hint) {
+    hint.style.display = "none";
+  }
+
+  // Create falling flowers
+
+  const flowers = ["🌸", "🌷", "🌼", "✿", "❀"];
+
+  for (let i = 0; i < 28; i++) {
+    const flower = document.createElement("span");
+
+    flower.className = "falling-flower";
+    flower.textContent = flowers[i % flowers.length];
+
+    flower.style.left = Math.random() * 100 + "%";
+    flower.style.fontSize = (16 + Math.random() * 18) + "px";
+    flower.style.animationDuration = (4 + Math.random() * 3) + "s";
+    flower.style.animationDelay = (Math.random() * 1.5) + "s";
+
+    flowerArea.appendChild(flower);
+  }
+
+  // Fade into the dark screen
+
+  await wait(300);
+  screen.classList.add("active");
+
+  // Show THE END after the transition
+
+  await wait(3500);
+  screen.classList.add("show-title");
 }
