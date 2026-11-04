@@ -1,8 +1,6 @@
-
 * {
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -654,4 +652,14 @@ h1 {
   .ending-note {
     padding: 20px 15px;
   }
+}
+/* LITTLE HINT ON THE LAST BUTTON */
+
+.button-hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  opacity: 0.85;
 }
