@@ -28,6 +28,10 @@ function openMenu(menu) {
     startLetterTyping();
   }
 
+  if (menu === "ending") {
+    startEndingTyping();
+  }
+
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
@@ -46,6 +50,13 @@ function backHome() {
 }
 
 
+// WAIT FUNCTION
+
+function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
 // SECRET LETTER TYPEWRITER
 
 const letterContent = document.getElementById("letter-content");
@@ -58,10 +69,6 @@ const originalLetter = Array.from(letterContent.children).map(function(item) {
 });
 
 let typingSession = 0;
-
-function wait(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 async function startLetterTyping() {
   const session = ++typingSession;
@@ -77,9 +84,7 @@ async function startLetterTyping() {
     const element = document.createElement(item.tag);
     letterContent.appendChild(element);
 
-    const characters = Array.from(item.text);
-
-    for (const character of characters) {
+    for (const character of Array.from(item.text)) {
       if (session !== typingSession) return;
 
       element.textContent += character;
@@ -92,6 +97,44 @@ async function startLetterTyping() {
   if (session === typingSession) {
     letterContent.classList.remove("typing");
     sign.classList.add("show");
+  }
+}
+
+
+// ENDING NOTE TYPEWRITER
+
+const endingNote = document.querySelector(".ending-note");
+
+const originalEndingParagraphs = Array.from(
+  endingNote.querySelectorAll("p")
+).map(function(paragraph) {
+  return paragraph.textContent;
+});
+
+let endingTypingSession = 0;
+
+async function startEndingTyping() {
+  const session = ++endingTypingSession;
+  const paragraphs = endingNote.querySelectorAll("p");
+
+  paragraphs.forEach(function(paragraph) {
+    paragraph.textContent = "";
+  });
+
+  for (let i = 0; i < originalEndingParagraphs.length; i++) {
+    if (session !== endingTypingSession) return;
+
+    const paragraph = paragraphs[i];
+    const text = originalEndingParagraphs[i];
+
+    for (const character of Array.from(text)) {
+      if (session !== endingTypingSession) return;
+
+      paragraph.textContent += character;
+      await wait(25);
+    }
+
+    await wait(500);
   }
 }
 
@@ -150,16 +193,18 @@ let finaleStarted = false;
 async function startFinale() {
   if (finaleStarted) return;
 
-  finaleStarted = true;
-
   const screen = document.getElementById("finale-screen");
   const flowerArea = document.getElementById("falling-flowers");
+
+  if (!screen || !flowerArea) {
+    console.error("Final screen elements were not found.");
+    return;
+  }
+
+  finaleStarted = true;
+
   const button = document.querySelector(".finale-button");
   const hint = document.querySelector(".finale-hint");
-
-  if (!screen || !flowerArea) return;
-
-  // Hide the button and its hint
 
   if (button) {
     button.style.display = "none";
@@ -169,7 +214,7 @@ async function startFinale() {
     hint.style.display = "none";
   }
 
-  // Create falling flowers
+  // FALLING FLOWERS
 
   const flowers = ["🌸", "🌷", "🌼", "✿", "❀"];
 
@@ -187,12 +232,12 @@ async function startFinale() {
     flowerArea.appendChild(flower);
   }
 
-  // Fade into the dark screen
+  // FADE TO DARK
 
   await wait(300);
   screen.classList.add("active");
 
-  // Show THE END after the transition
+  // SHOW THE END
 
   await wait(3500);
   screen.classList.add("show-title");
