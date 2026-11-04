@@ -131,10 +131,10 @@ async function startEndingTyping() {
       if (session !== endingTypingSession) return;
 
       paragraph.textContent += character;
-      await wait(25);
+      await wait(55);
     }
 
-    await wait(500);
+    await wait(650);
   }
 }
 
